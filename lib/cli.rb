@@ -5,6 +5,7 @@ class CLI
 
   def start
     puts "Welcome"
+    API.get_jokes
   end
-  
+
 end
