@@ -5,17 +5,28 @@ class API
   def self.get_jokes
     url = "https://official-joke-api.appspot.com/jokes/programming/ten"
     uri = URI(url)
-    response = Net::HTTP.get(url)
-    JSON.parse(response)
-    # something here then each do |variable|
-    #   initialize a new jokes
-    #   new_instance = Joke.new
-    #    assign attributes to it
-    #   this is where you put the stuff from the api
-    #   new_instance.id = (hash of elements)[]
-    #****tried to run ruby bin/start, also not saving my new information
-  binding.pry
+    response = Net::HTTP.get(uri)
+    hash = JSON.parse(response)
 
+    hash_of_jokes = hash
+
+    hash_of_jokes.each do |joke_hash|
+    joke_instance = Joke.new
+    binding.pry
+    joke_instance.id = hash[int"id"]
+    joke_instance.kind = hash
+    joke_instance.question = hash
+    joke_instance.punchline = hash
+    #id => "id"
+    #kind of joke => "type"
+    #question => "setup"
+    #punchline => "punchline"
+
+
+
+#initialize a new joke
+#assign attributes to it
+  end
   end
 
 end
