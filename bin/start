@@ -3,6 +3,3 @@
 require_relative '../environment'
 
 puts 'Hi'
-
-cli_instance = CLI.new
-cli_instance.start
