@@ -6,7 +6,7 @@ class CLI
   def start
     puts "Welcome"
     API.get_jokes
-    self.menu
+    self.feelings
   end
 
   def feelings
@@ -14,11 +14,16 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       puts "Yes you do want to hear a 'sad' joke"
-      displays_sad_jokes
-    else
+      displays_random_sad_jokes
+    elsif
       #end the program
       puts "What about a joke that relates to you feeling angry?"
+      displays_random_angry_jokes
+    else
+      puts "What about a joke that relates to you feeling confused?"
+      displays_random_confused_jokes
     end
+
   end
 
   def displays_sad_jokes

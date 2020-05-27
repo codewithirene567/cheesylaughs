@@ -12,8 +12,8 @@ class API
 
     hash_of_jokes.each do |joke_hash|
     joke_instance = Joke.new
-    binding.pry
-    joke_instance.id = hash[int"id"]
+
+    joke_instance.id = hash
     joke_instance.kind = hash
     joke_instance.question = hash
     joke_instance.punchline = hash
