@@ -19,10 +19,16 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       puts "Ah wonderful choice, hope you work in software so that you can get these."
-      API.get_programming_jokes
+      display_programming_jokes
     else user_input == "no"
       puts "Okay let's try something else."
       self.do_you_want_knock_knock_joke
+    end
+  end
+
+  def display_programming_joke
+    Joke.all.each do |joke|
+      puts joke
     end
   end
 
