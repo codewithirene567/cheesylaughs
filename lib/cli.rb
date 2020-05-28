@@ -16,7 +16,6 @@ class CLI
      puts joke.question
      sleep(2)
      puts joke.punchline
-#sleep
      #Joke.programming.each do |joke|
   end
 #find a way to make it not repetitive

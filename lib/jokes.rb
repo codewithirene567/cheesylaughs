@@ -26,14 +26,13 @@ attr_accessor :id, :kind, :question, :punchline
   def self.knock_knock
    all.select do |knocking_joke_instance|
      knocking_joke_instance.kind == "knock-knock"
-     #had binding.pry here
      end
    end
 
-    def self.general
-      all.select do |general_joke_instance|
-        general_joke_instance.kind == "general"
-        end
+  def self.general
+    all.select do |general_joke_instance|
+      general_joke_instance.kind == "general"
       end
+    end
 
 end
