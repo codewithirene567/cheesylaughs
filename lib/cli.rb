@@ -8,7 +8,7 @@ class CLI
     API.get_programming_jokes
     API.get_knock_knock_jokes
     API.get_general_jokes
-    self.do_you_want_programming_joke
+    self.introduction
   end
 
   def display_programming_joke
@@ -16,7 +16,6 @@ class CLI
      puts joke.question
      sleep(2)
      puts joke.punchline
-#sleep
      #Joke.programming.each do |joke|
   end
 #find a way to make it not repetitive
@@ -33,13 +32,32 @@ class CLI
      sleep(2)
      puts joke.punchline
   end
+#you could list the 3 options at the
+#beginning and then based on their choice, you display that category’s joke
+
+  def introduction
+      puts "Hey unhappy person I see that look on your face. You sure could go
+      for a smile right now. Why don’t we make some cheese toast with
+      your smile on the top and a joke to be the foundation for it.
+      We’ll ask you a few questions to get the right jokes for what you're
+      in the mood for. Please select the number which represents the category of jokes
+      you want to hear.
+
+      1. Programming
+      2. Knock-knock
+      3. General"
+      user_input = gets.strip
+      if user_input == "1"
+        do_you_want_programming_joke
+      elsif user_input == "2"
+        do_you_want_knock_knock_joke
+      else user_input == "3"
+        do_you_want_general_joke
+      end
+   end
 
   def do_you_want_programming_joke
-    puts "Hey unhappy person I see that look on your face. You sure could go
-    for a smile right now. Why don’t we make some cheese toast with
-    your smile on the top and a joke to be the foundation for it.
-    We’ll ask you a few questions to get the right jokes for what you're
-    in the mood for. Do you want to hear a joke that is about programming?"
+    puts "Do you want to hear a joke that is about programming?"
     puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
@@ -53,7 +71,8 @@ class CLI
   end
 
   def do_you_want_knock_knock_joke
-    puts "Hmm what about a knock-knock joke?"
+    puts "Hmm a knock-knock joke?"
+    puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
       puts "Glad we could find something you like, you'll be knocking on your friends' doors trying these"
@@ -67,6 +86,7 @@ class CLI
 
   def do_you_want_general_joke
     puts "What about a joke that is about anything and everything?"
+    puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
       puts "Finally! Okay here they are..."
