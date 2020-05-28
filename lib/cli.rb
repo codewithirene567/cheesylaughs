@@ -6,6 +6,8 @@ class CLI
   def start
     puts "Welcome"
     API.get_programming_jokes
+    API.get_knock_knock_jokes
+    API.get_general_jokes
     self.do_you_want_programming_joke
   end
 
@@ -19,7 +21,7 @@ class CLI
 
   def display_knock_knock_joke
      joke = Joke.knock_knock.sample
-#The problem is whenever I try to get it to use a knock knock jokes it will not display anything whether it is a 
+#The problem is whenever I try to get it to use a knock knock jokes it will not display anything whether it is a
 #yes or a no, I think it is because it is pulling it out of the programming url not the knock knock url
      puts joke.question
      puts joke.punchline
@@ -63,6 +65,7 @@ class CLI
 
   def do_you_want_general_joke
     puts "What about a joke that is about anything and everything?"
+    user_input = gets.strip
     if user_input == "yes"
       puts "Finally! Okay here they are..."
       display_general_joke

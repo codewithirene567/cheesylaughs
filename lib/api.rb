@@ -50,7 +50,7 @@ class API
   def self.get_general_jokes
     url = "https://official-joke-api.appspot.com/jokes/general/ten"
     uri = URI(url)
-    response = NET::HTTP.get(uri)
+    response = Net::HTTP.get(uri)
     hash_of_jokes = JSON.parse(response)
 
     hash_of_jokes.each do |joke_hash|
