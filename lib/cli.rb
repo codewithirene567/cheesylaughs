@@ -38,7 +38,7 @@ class CLI
   def introduction
       puts "Hey unhappy person I see that look on your face. You sure could go
       for a smile right now. Why don’t we make some cheese toast with
-      your smile on the top and a joke to be the foundation for it.
+      your smile on the top and a joke to be the foundation for it?
       We’ll ask you a few questions to get the right jokes for what you're
       in the mood for. Please select the number which represents the category of jokes
       you want to hear.
@@ -51,8 +51,12 @@ class CLI
         do_you_want_programming_joke
       elsif user_input == "2"
         do_you_want_knock_knock_joke
-      else user_input == "3"
+      elsif user_input == "3"
         do_you_want_general_joke
+      else user_input == "no"
+        puts "Okay looks like we are starting over. Please pick something once this loads."
+        sleep(3)
+        introduction
       end
    end
 
@@ -61,7 +65,7 @@ class CLI
     puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
-      puts "Ah wonderful choice, hope you work in software so that you can get these."
+      puts "Ah wonderful choice, hope you work in software so that you can get this one."
       display_programming_joke
       do_you_want_to_hear_another_joke
     else user_input == "no"
@@ -75,7 +79,7 @@ class CLI
     puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
-      puts "Glad we could find something you like, you'll be knocking on your friends' doors trying these"
+      puts "Glad we could find something you like, you'll be knocking on your friends' doors trying this..."
       display_knock_knock_joke
       do_you_want_to_hear_another_joke
     else user_input == "no"
@@ -89,7 +93,7 @@ class CLI
     puts "It's going to be a yes or a no"
     user_input = gets.strip
     if user_input == "yes"
-      puts "Finally! Okay here they are..."
+      puts "Finally! Okay here's one..."
       display_general_joke
       do_you_want_to_hear_another_joke
    else user_input == "no"
