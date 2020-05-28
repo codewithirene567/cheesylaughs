@@ -7,15 +7,8 @@ class API
     uri = URI(url)
     response = Net::HTTP.get(uri)
     hash_of_jokes = JSON.parse(response)
-
-#General, programming, knock knock
-#https://official-joke-api.appspot.com/jokes/knock-knock/ten
-#https://official-joke-api.appspot.com/jokes/general/ten
-#https://official-joke-api.appspot.com/jokes/programming/ten
-
     hash_of_jokes.each do |joke_hash|
         joke_instance = Joke.new
-
         joke_instance.id = joke_hash["id"]
         joke_instance.kind = joke_hash["type"]
         joke_instance.question = joke_hash["setup"]
@@ -39,7 +32,6 @@ class API
 
     hash_of_jokes.each do |joke_hash|
         joke_instance = Joke.new
-
         joke_instance.id = joke_hash["id"]
         joke_instance.kind = joke_hash["type"]
         joke_instance.question = joke_hash["setup"]
@@ -55,7 +47,6 @@ class API
 
     hash_of_jokes.each do |joke_hash|
         joke_instance = Joke.new
-
         joke_instance.id = joke_hash["id"]
         joke_instance.kind = joke_hash["type"]
         joke_instance.question = joke_hash["setup"]
