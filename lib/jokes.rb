@@ -18,22 +18,34 @@ attr_accessor :id, :kind, :question, :punchline
   #on ALL of the jokes to just select programming ones
 
 #self.get jokes, pass in the argument for what type it is
+  def self.jokes_instance(type)
+    all.select do |joke_instance| #this has to match with the something.kind
+      joke_instance.kind == "#{type}"
+      end
+  end
+
  def self.programming
-  all.select do |joke_instance| #this has to match with the something.kind
-    joke_instance.kind == "programming"
-    end
+   type == "programming"
+   self.jokes
+  #all.select do |joke_instance| #this has to match with the something.kind
+    #joke_instance.kind == "programming"
+
   end
 
   def self.knock_knock
-   all.select do |knocking_joke_instance|
-     knocking_joke_instance.kind == "knock-knock"
-     end
+   type == "knock-knock"
+   self.jokes
+   #all.select do |knocking_joke_instance|
+     #knocking_joke_instance.kind == "knock-knock"
+     #end
    end
 
   def self.general
-    all.select do |general_joke_instance|
-      general_joke_instance.kind == "general"
-      end
-    end
-
+    type == "general"
+    self.jokes
+    #all.select do |general_joke_instance|
+      #general_joke_instance.kind == "general"
+    #  end
+  #  end
+  end
 end
