@@ -5,7 +5,9 @@ class CLI
 
   def start
     puts "Welcome"
-    API.get_jokes(type)
+    API.get_jokes("programming")
+    API.get_jokes("knock-knock")
+    API.get_jokes("general")
     #API.get_programming_jokes
     #API.get_knock_knock_jokes
     #API.get_general_jokes
@@ -19,7 +21,7 @@ class CLI
   end
 
   def display_programming_joke
-     joke = Joke.programming.sample
+     joke = Joke.jokes_instance("programming").sample
      self.display_joke(joke)
      #puts joke.question
      #sleep(2)
@@ -27,12 +29,12 @@ class CLI
   end
 
   def display_knock_knock_joke
-     joke = Joke.knock_knock.sample
+     joke = Joke.jokes_instance("knock-knock").sample
      self.display_joke(joke)
   end
 
   def display_general_joke
-     joke = Joke.general.sample
+     joke = Joke.jokes_instance("general").sample
      self.display_joke(joke)
   end
 
