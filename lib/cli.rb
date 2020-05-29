@@ -5,9 +5,10 @@ class CLI
 
   def start
     puts "Welcome"
-    API.get_programming_jokes
-    API.get_knock_knock_jokes
-    API.get_general_jokes
+    API.get_jokes(type)
+    #API.get_programming_jokes
+    #API.get_knock_knock_jokes
+    #API.get_general_jokes
     self.introduction
   end
 
