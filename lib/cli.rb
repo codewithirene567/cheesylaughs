@@ -12,7 +12,6 @@ class CLI
   end
 
   def display_joke(joke)
-
     puts joke.question
     sleep(2)
     puts joke.punchline
@@ -24,24 +23,17 @@ class CLI
      #puts joke.question
      #sleep(2)
      #puts joke.punchline
-     #Joke.programming.each do |joke|
   end
-#find a way to make it not repetitive
+
   def display_knock_knock_joke
      joke = Joke.knock_knock.sample
-     puts joke.question
-     sleep(2)
-     puts joke.punchline
+     self.display_joke(joke)
   end
 
   def display_general_joke
      joke = Joke.general.sample
-     puts joke.question
-     sleep(2)
-     puts joke.punchline
+     self.display_joke(joke)
   end
-#you could list the 3 options at the
-#beginning and then based on their choice, you display that category’s joke
 
   def introduction
       puts "Hey unhappy person I see that look on your face. You sure could go
