@@ -17,6 +17,7 @@ attr_accessor :id, :kind, :question, :punchline
   #Essentially, you’ll need to use the .find_all or .select method
   #on ALL of the jokes to just select programming ones
 
+#self.get jokes, pass in the argument for what type it is
  def self.programming
   all.select do |joke_instance| #this has to match with the something.kind
     joke_instance.kind == "programming"

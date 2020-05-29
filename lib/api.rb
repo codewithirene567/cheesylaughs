@@ -2,6 +2,9 @@ require "pry"
 class API
   #make calls to API
 
+#write one method that has all the stuff in it except the argument for what kind of joke it is
+#called get jokes pass in argument whether it is a general or programming
+#interpolating programming, make it a variable
   def self.get_programming_jokes
     url = "https://official-joke-api.appspot.com/jokes/programming/ten"
     uri = URI(url)

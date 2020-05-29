@@ -11,11 +11,19 @@ class CLI
     self.introduction
   end
 
+  def display_joke(joke)
+
+    puts joke.question
+    sleep(2)
+    puts joke.punchline
+  end
+
   def display_programming_joke
      joke = Joke.programming.sample
-     puts joke.question
-     sleep(2)
-     puts joke.punchline
+     self.display_joke(joke)
+     #puts joke.question
+     #sleep(2)
+     #puts joke.punchline
      #Joke.programming.each do |joke|
   end
 #find a way to make it not repetitive
