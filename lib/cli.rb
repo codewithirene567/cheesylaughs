@@ -8,10 +8,8 @@ class CLI
     API.get_jokes("programming")
     API.get_jokes("knock-knock")
     API.get_jokes("general")
-    #API.get_programming_jokes
-    #API.get_knock_knock_jokes
-    #API.get_general_jokes
     self.introduction
+    #.introduction is an instance method
   end
 
   def display_joke(joke)
@@ -19,7 +17,7 @@ class CLI
     sleep(2)
     puts joke.punchline
   end
-
+#returns nil because it is using puts which always returns nil
   def display_programming_joke
      joke = Joke.jokes_instance("programming").sample
      self.display_joke(joke)
@@ -32,7 +30,7 @@ class CLI
      joke = Joke.jokes_instance("knock-knock").sample
      self.display_joke(joke)
   end
-
+#also returns nil
   def display_general_joke
      joke = Joke.jokes_instance("general").sample
      self.display_joke(joke)
@@ -56,7 +54,7 @@ class CLI
         do_you_want_knock_knock_joke
       elsif user_input == "3"
         do_you_want_general_joke
-      else user_input == "no"
+      else
         puts "Okay looks like we are starting over. Please pick something once this loads."
         sleep(3)
         introduction
@@ -70,6 +68,7 @@ class CLI
     if user_input == "yes"
       puts "Ah wonderful choice, hope you work in software so that you can get this one."
       display_programming_joke
+      #display_joke("programming"), create a general method called display_joke that will replace each joke display
       do_you_want_to_hear_another_joke
     else user_input == "no"
       puts "Okay let's try something else."

@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+#called shebang line makes the environment recognize that it is ruby code
+require_relative '../environment'
+#making it so all the files can talk to each other, defining which files we have access to when it starts
+
+
+cli_instance = CLI.new
+cli_instance.start
+#.start is instance method from CLI class
+#.new is a class method because it is being called on a class
