@@ -11,30 +11,35 @@ class CLI
     self.introduction
     #.introduction is an instance method
   end
+#display_joke("programming"), create a general method called display_joke that will replace each joke display
+  def display_joke(type)
+      joke = Joke.jokes_instance(type).sample
+      self.display_joke_full(joke)
+    end
 
-  def display_joke(joke)
-    puts joke.question
-    sleep(2)
-    puts joke.punchline
-  end
+    def display_joke_full(joke)
+      puts joke.question
+      sleep(2)
+      puts joke.punchline
+    end
 #returns nil because it is using puts which always returns nil
-  def display_programming_joke
-     joke = Joke.jokes_instance("programming").sample
-     self.display_joke(joke)
+  #def display_programming_joke
+  #   joke = Joke.jokes_instance("programming").sample
+  #   self.display_joke(joke)
      #puts joke.question
      #sleep(2)
      #puts joke.punchline
-  end
+  #end
 
-  def display_knock_knock_joke
-     joke = Joke.jokes_instance("knock-knock").sample
-     self.display_joke(joke)
-  end
+  #def display_knock_knock_joke
+  #   joke = Joke.jokes_instance("knock-knock").sample
+  #   self.display_joke(joke)
+  #end
 #also returns nil
-  def display_general_joke
-     joke = Joke.jokes_instance("general").sample
-     self.display_joke(joke)
-  end
+  #def display_general_joke
+  #   joke = Joke.jokes_instance("general").sample
+  #   self.display_joke(joke)
+  #end
 
   def introduction
       puts "Hey unhappy person I see that look on your face. You sure could go
@@ -48,6 +53,7 @@ class CLI
       2. Knock-knock
       3. General"
       user_input = gets.strip
+      #case and when statement
       if user_input == "1"
         do_you_want_programming_joke
       elsif user_input == "2"
@@ -67,10 +73,9 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       puts "Ah wonderful choice, hope you work in software so that you can get this one."
-      display_programming_joke
-      #display_joke("programming"), create a general method called display_joke that will replace each joke display
+      display_joke("programming")
       do_you_want_to_hear_another_joke
-    else user_input == "no"
+    else
       puts "Okay let's try something else."
       do_you_want_knock_knock_joke
     end
@@ -82,9 +87,9 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       puts "Glad we could find something you like, you'll be knocking on your friends' doors trying this..."
-      display_knock_knock_joke
+      display_joke("knock-knock")
       do_you_want_to_hear_another_joke
-    else user_input == "no"
+    else
       puts "Okay let's try something else."
       do_you_want_general_joke
     end
@@ -96,7 +101,7 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       puts "Finally! Okay here's one..."
-      display_general_joke
+      display_joke("general")
       do_you_want_to_hear_another_joke
    else user_input == "no"
       puts "The joke's on you then! You're getting a smile today whether you like it or not!"

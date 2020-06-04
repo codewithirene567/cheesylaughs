@@ -34,7 +34,8 @@ attr_accessor :id, :kind, :question, :punchline
       joke_instance.kind == type
       end
   end
-#going to find the right type of joke through the argument and then
+  #compares the type to the type the user asked for
+#finds the right type of joke through the argument
  #def self.programming
   # type == "programming"
   # self.jokes
