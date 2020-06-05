@@ -1,7 +1,4 @@
 class CLI
-  #interact with the user
-  #include any puts or gets statements
-  #control the flow of our program
 
   def start
     puts "Welcome"
@@ -9,9 +6,8 @@ class CLI
     API.get_jokes("knock-knock")
     API.get_jokes("general")
     self.introduction
-    #.introduction is an instance method
   end
-#display_joke("programming"), create a general method called display_joke that will replace each joke display
+
   def display_joke(type)
       joke = Joke.jokes_instance(type).sample
       self.display_joke_full(joke)
@@ -22,24 +18,6 @@ class CLI
       sleep(2)
       puts joke.punchline
     end
-#returns nil because it is using puts which always returns nil
-  #def display_programming_joke
-  #   joke = Joke.jokes_instance("programming").sample
-  #   self.display_joke(joke)
-     #puts joke.question
-     #sleep(2)
-     #puts joke.punchline
-  #end
-
-  #def display_knock_knock_joke
-  #   joke = Joke.jokes_instance("knock-knock").sample
-  #   self.display_joke(joke)
-  #end
-#also returns nil
-  #def display_general_joke
-  #   joke = Joke.jokes_instance("general").sample
-  #   self.display_joke(joke)
-  #end
 
   def introduction
       puts "Hey unhappy person I see that look on your face. You sure could go
@@ -53,7 +31,6 @@ class CLI
       2. Knock-knock
       3. General"
       user_input = gets.strip
-      #case and when statement
       if user_input == "1"
         do_you_want_programming_joke
       elsif user_input == "2"
@@ -103,7 +80,7 @@ class CLI
       puts "Finally! Okay here's one..."
       display_joke("general")
       do_you_want_to_hear_another_joke
-   else user_input == "no"
+   else
       puts "The joke's on you then! You're getting a smile today whether you like it or not!"
       sleep(3)
       repeat_it_till_joke
@@ -121,12 +98,9 @@ class CLI
     user_input = gets.strip
     if user_input == "yes"
       do_you_want_programming_joke
-    else user_input == "no"
+    else
        puts "Have a nice day with a nice smile."
     end
     end
-    #ask them the question
-    #if they say yes it is going to send them to do you want programming joke
-    #no then goodbye message
-    #call this method anytime you display a joke
+
 end
